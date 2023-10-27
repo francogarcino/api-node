@@ -3,10 +3,14 @@ import { HydratedDocument } from 'mongoose';
 
 export type PlayerDoc = HydratedDocument<Player>;
 
-@Schema({collection: 'players'})
+@Schema({collection: 'players', versionKey: false})
 export class Player {
+    constructor(nombre: string) {
+        this.name = nombre
+    }
+
     _id: String
-    @Prop({ required: true }) name: String;
+    @Prop() name: string;
     @Prop({ default: 1000 }) gold: Number;
 }
 

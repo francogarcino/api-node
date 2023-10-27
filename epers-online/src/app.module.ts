@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PlayerService } from './model/player/player.service';
-import { Player, PlayerSchema } from './model/player/player.schema';
+import { PlayerSchema } from './model/player/player.schema';
 import { PlayerController } from './model/player/player.controller';
 
 @Module({

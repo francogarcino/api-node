@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Param } from '@nestjs/common';
 import { PlayerService } from './player.service';
 import { Player } from './player.schema';
 
@@ -11,8 +11,8 @@ export class PlayerController {
     return this.service.readAll()
   }
 
-  @Post('/register')
-  register(player: Player): Promise<Player> {
-    return this.service.create(player)
+  @Post('/register/:nombre')
+  register(@Param('nombre') name: string): Promise<Player> {
+    return this.service.create(new Player(name))
   }
 }
