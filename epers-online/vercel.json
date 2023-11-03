@@ -9,9 +9,12 @@
   "routes": [
     {
       "src": "/",
-      "dest": "src/app.controller.ts",
+      "dest": "src/main.ts",
       "methods": [
-        "GET"
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
       ]
     }
   ]
